@@ -36,9 +36,9 @@ var helper = (function() {
       case 'owm':
         return convertOWMCode(id, night);
       case 'darksky':
-        return convertDarkSkyCode(id, night);
+        return convertDarkSkyCode(id);
       case 'yahoo':
-        return convertYahooCode(id, night);
+        return convertYahooCode(id);
       default:
         throw new Error('Name passed to component invalid');
     }
