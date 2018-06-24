@@ -8,6 +8,8 @@ Thumbs.db
 
 .env
 
+.idea
+
 # Logs
 logs
 *.log

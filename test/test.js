@@ -14,10 +14,14 @@ describe('WeatherIcon', () => {
       wrapper = shallow(<WeatherIcon name='owm' iconId="200" />);
       expect(wrapper.props().name).to.equal('owm');
     });
-    it('should map appropriate className with ID 200 for owm', () => {
+    it('should map appropriate className with ID 200 for owm with night prop', () => {
 
       wrapper = shallow(<WeatherIcon name='owm' iconId="200" />);
       expect(wrapper.props().className).to.equal('wi wi-day-storm-showers');
+    });
+    it('should map appropriate className with ID 200 for owm', () => {
+      wrapper = shallow(<WeatherIcon name='owm' iconId="200" night={true} />);
+      expect(wrapper.props().className).to.equal('wi wi-night-storm-showers');
     });
   });
 
