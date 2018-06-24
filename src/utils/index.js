@@ -15,13 +15,14 @@ var helper = (function() {
     throw new Error('ID passed to component invalid');
   };
   // openweather
-  var convertOWMCode = function(id) {
+  var convertOWMCode = function(id, night) {
     if(owmIcons[id]) {
       let prefix = 'wi wi-';
       let icon = owmIcons[id].icon;
       // If we are not in the ranges mentioned above, add a day/night prefix.
       if (!(id > 699 && id < 800) && !(id > 899 && id < 1000)) {
-        icon = 'day-' + icon;
+
+        icon = (night ? 'night-' : 'day-') + icon;
       }
 
       icon = prefix + icon;
@@ -30,14 +31,14 @@ var helper = (function() {
     throw new Error('ID passed to component invalid');
   };
 
-  var convertCode = function(name, id) {
+  var convertCode = function(name, id, night) {
     switch(name) {
       case 'owm':
-        return convertOWMCode(id);
+        return convertOWMCode(id, night);
       case 'darksky':
-        return convertDarkSkyCode(id);
+        return convertDarkSkyCode(id, night);
       case 'yahoo':
-        return convertYahooCode(id);
+        return convertYahooCode(id, night);
       default:
         throw new Error('Name passed to component invalid');
     }

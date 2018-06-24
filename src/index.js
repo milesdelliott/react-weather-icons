@@ -15,8 +15,8 @@ import helper from './utils';
 
 const WeatherIcon = (props) => {
   var icon;
-  var { name, className, rotate, fixedWidth, iconId, flip, ...other } = props;
-  icon = helper.convertCode(name, iconId);
+  var { name, night, className, rotate, fixedWidth, iconId, flip, ...other } = props;
+  icon = helper.convertCode(name, iconId, night);
   icon += flip ? ' wi-flip-' + flip : '';
   icon += rotate ? ' wi-rotate-' + rotate : '';
   icon += fixedWidth ? ' wi-fw' : '';
